@@ -58,28 +58,28 @@ const Contact = () => {
           </p>
           <div className="socials">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/pavan-pani"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/pavan-kumar-goudara/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin />
             </a>
             <a
-              href="https://facebook.com/yourusername"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebook />
             </a>
             <a
-              href="https://instagram.com/yourusername"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
             >
