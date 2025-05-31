@@ -571,3 +571,14 @@ button {
     }
   }
 }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $color-text-light;
+  text-align: center;
+}

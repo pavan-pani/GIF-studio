@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import './styles/main.scss';
-import './styles/loading.scss';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -15,7 +14,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <Navbar />
-        <Suspense fallback={<div className="loader"></div>}>
+        <Suspense fallback={<div className="loading">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
