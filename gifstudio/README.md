@@ -15,6 +15,7 @@ Welcome to **GIF Studios** – a bold and visually immersive website tailored fo
 | React Router | Client-side routing                 |
 | [React Icons](https://react-icons.github.io/react-icons/) | Icon library                        |
 | [StorySet Illustrations](https://storyset.com/) | Free and customizable SVG illustrations |
+| [css-loaders](https://css-loaders.com/classic/) | Free CSS loaders |
 | Git         | Version control                     |
 | Vercel     | Deployment platform for frontend apps |
 

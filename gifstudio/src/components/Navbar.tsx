@@ -17,9 +17,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 role="button" className="logo" onClick={navigateHome}>GIF Studios</h1>
+      <h1 role="button" className="logo" aria-label="Go to homepage" onClick={navigateHome}>GIF Studios</h1>
       <div className="mobile-controls">
-        <button role="switch" className="theme-toggle" onClick={toggleTheme}>
+        <button role="switch" aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} className="theme-toggle" onClick={toggleTheme}>
           {theme === "dark" ? <CiLight /> : <MdDarkMode />}
         </button>
         <div className="hamburger" onClick={toggleMenu}>
