@@ -17,10 +17,27 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 role="button" className="logo" aria-label="Go to homepage" onClick={navigateHome}>GIF Studios</h1>
+      <button
+        className="logo"
+        onClick={navigateHome}
+        aria-label="Go to homepage"
+      >
+        GIF Studios
+      </button>
       <div className="mobile-controls">
-        <button role="switch" aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} className="theme-toggle" onClick={toggleTheme}>
-          {theme === "dark" ? <CiLight /> : <MdDarkMode />}
+        <button
+          type="button"
+          className="theme-toggle hide-mobile"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          aria-checked={theme === "dark"}
+          role="switch"
+        >
+          {theme === "dark" ? (
+            <CiLight size={24} title="Switch to light mode" />
+          ) : (
+            <MdDarkMode size={24} title="Switch to dark mode" />
+          )}
         </button>
         <div className="hamburger" onClick={toggleMenu}>
           {menuOpen ? <IoMdClose /> : <GiHamburgerMenu />}
@@ -36,7 +53,14 @@ function Navbar() {
         <NavLink to="/contact" title="Contact us" onClick={closeMenu}>
           Contact
         </NavLink>
-        <button role="switch" className="theme-toggle hide-mobile" onClick={toggleTheme}>
+        <button
+          type="button"
+          className="theme-toggle hide-mobile"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          aria-checked={theme === "dark"}
+          role="switch"
+        >
           {theme === "dark" ? (
             <CiLight size={24} title="Switch to light mode" />
           ) : (
