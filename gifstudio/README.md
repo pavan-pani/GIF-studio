@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+# 🎬 GIF Studios - Creative Marketing & Entertainment Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **GIF Studios** – a bold and visually immersive website tailored for a creative marketing and entertainment company. Built with a modern React.js stack and designed for responsiveness and theme versatility (light/dark), this app offers a strong user experience across all devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Tech Stack
 
-## Expanding the ESLint configuration
+| Tech                 | Description                                  |
+|----------------------|----------------------------------------------|
+| [React 19]       | Modern frontend UI library          |
+| [TypeScript] | Typed JavaScript for safer development |
+| [Vite]          | Lightning-fast frontend tooling     |
+| [SCSS]     | Extended CSS with variables, nesting, and theming support |
+| [React Router] | Client-side routing                 |
+| [React Icons](https://react-icons.github.io/react-icons/) | Icon library                        |
+| [StorySet Illustrations](https://storyset.com/) | Free and customizable SVG illustrations |
+| [Git]          | Version control                     |
+| [Vercel]      | Deployment platform for frontend apps |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Clone the Repository
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```bash
+git clone https://github.com/pavan-pani/GIF-studio.git
+cd gif-studios

@@ -1,4 +1,4 @@
-@use './variables.scss' as *;
+@use './variables.scss'as *;
 
 body {
   margin: 0;
@@ -15,13 +15,14 @@ body {
   background-color: $color-bg-dark;
   color: $color-text-dark;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: $accent;
-  color: rgb(250, 250, 250);
+  color: white;
   position: relative;
   z-index: 100;
 
@@ -30,89 +31,96 @@ body {
     font-weight: bold;
   }
 
-  .hamburger {
+  .hide-mobile {
     display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  .mobile-controls {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+
+    .hamburger {
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
   }
 
   .nav-links {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 
     a {
       margin: 0 0.5rem;
       color: white;
       text-decoration: none;
-      font-weight: 500;
-    }
-
-    .theme-toggle {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      margin-left: 1rem;
-      cursor: pointer;
-    }
-
-    .book-call {
-      margin-left: 1rem;
-      padding: 0.4rem 0.9rem;
-      background: white;
-      color: $accent;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s;
+      font-weight: 600;
+      transition: color 0.3s ease;
 
       &:hover {
-        background: lighten(white, 5%);
+        color: $accent_second;
       }
     }
+
   }
-}
 
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: $accent;
-  padding: 1rem;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
-  z-index: 10;
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $accent;
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    gap: 1.5rem;
+    z-index: 10;
 
-  a,
-  .theme-toggle,
-  .book-call {
-    width: 100%;
-    text-align: left;
+    a,
+    .book-call {
+      width: 100%;
+      text-align: center;
+    }
   }
-}
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .navbar {
-    .hamburger {
-      display: block;
+  @media (max-width: 768px) {
+    flex-direction: row-reverse;
+
+    .logo {
+      order: 2;
+    }
+
+    .mobile-controls {
+      display: flex;
+      order: 1;
     }
 
     .nav-links {
       display: none;
-      flex-direction: column;
-      align-items: flex-start;
     }
 
     .nav-links.active {
       display: flex;
     }
   }
+
 }
+
 
 
 section {
@@ -143,7 +151,8 @@ form {
   margin-bottom: 2rem;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
@@ -180,6 +189,7 @@ button {
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -220,13 +230,15 @@ button {
   transition: all 0.3s ease;
 
   &:hover {
-    background: $accent;
+    background: $accent_second;
     color: white;
     transform: scale(1.05);
   }
 }
 
-.home, .services, .contact {
+.home,
+.services,
+.contact {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -238,7 +250,8 @@ button {
 .tools-tech {
   margin-top: 3rem;
 
-  h3, h2 {
+  h3,
+  h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: $accent;
@@ -247,8 +260,10 @@ button {
   ul {
     list-style: none;
     padding-left: 0;
+
     li {
       margin-bottom: 0.5rem;
+
       &::before {
         content: '🎯';
         margin-right: 0.5rem;
@@ -290,6 +305,7 @@ button {
 
 .tools-tech ul {
   padding-left: 1rem;
+
   li {
     margin-bottom: 0.5rem;
   }
@@ -299,7 +315,7 @@ button {
   text-align: center;
   padding: 1.5rem 1rem;
   background-color: #222;
-  
+
 
 
   color: #eee;
@@ -328,7 +344,8 @@ button {
       display: flex;
     }
 
-    a, button {
+    a,
+    button {
       margin: 0.5rem 0;
     }
   }
@@ -347,22 +364,44 @@ button {
   gap: 2rem;
   margin: 4rem 0;
   animation: fadeSlideIn 1.2s ease-out forwards;
-  &__img { flex: 1 1 320px; }
-  &__txt { flex: 1 1 320px; }
 
-  img { width: 100%; height: auto; }
+  &__img {
+    flex: 1 1 320px;
+  }
+
+  &__txt {
+    flex: 1 1 320px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.reverse { flex-direction: row-reverse; }
-
-/* ───────── Home specific ───────── */
-.story, .workflow, .culture {
-  h2        { color: $accent; margin-bottom: 1rem; }
-  p, li, ol { line-height: 1.6; }
-  ol        { padding-left: 1.2rem; }
+.reverse {
+  flex-direction: row-reverse;
 }
 
-/* ───────── Services grid ───────── */
+.story,
+.workflow,
+.culture {
+  h2 {
+    color: $accent;
+    margin-bottom: 1rem;
+  }
+
+  p,
+  li,
+  ol {
+    line-height: 1.6;
+  }
+
+  ol {
+    padding-left: 1.2rem;
+  }
+}
+
 .service-grid {
   display: grid;
   gap: 2rem;
@@ -371,37 +410,56 @@ button {
 }
 
 .service-card {
-  background: rgba(0,0,0,.03);
+  background: rgba(0, 0, 0, 0.066);
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
   transition: transform .3s;
 
-  img   { width: 250px; margin-bottom: 1rem; }
-  h3    { color: $accent; margin-bottom: .5rem; }
-  p     { font-size: .95rem; }
-  &:hover { transform: translateY(-6px); }
+  img {
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: $accent;
+    margin-bottom: .5rem;
+  }
+
+  p {
+    font-size: .95rem;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 0, 183, 0.25);
+    box-shadow: #e91e63 10px 10px 20px rgb(0, 0, 0);
+  }
 }
 
-/* ───────── Mobile tweaks ───────── */
 @media (max-width: 700px) {
-  .split__txt { text-align: center; }
-  .reverse    { flex-direction: column; }
+  .split__txt {
+    text-align: center;
+  }
+
+  .reverse {
+    flex-direction: column;
+  }
 }
 
 .workflow li strong {
-  // color: #e91e63; // Or your brand pink
+  // color: #e91e63;
   font-weight: 600;
   list-style: none;
 
 }
+
 .workflow ol {
-  // counter-reset: section;
   list-style: none;
 }
+
 .workflow ol li::before {
-  // counter-increment: section;
-  // content: counter(section) ". ";
+
   font-weight: bold;
   margin-right: 0.4rem;
   list-style: none;
@@ -411,8 +469,105 @@ button {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
+
 .culture-of-wow ul li strong {
-  color: #e91e63; // GIF Studios pink or accent
+  color: #e91e63;
   font-weight: 600;
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  // background-color: $background;
+  color: $color-text-light;
+
+  .contact-illustration {
+    flex: 1 1 40%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .contact-details {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h2 {
+      font-size: 2rem;
+      color: $accent
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      input,
+      textarea {
+        padding: 0.75rem;
+        border: 1px solid $accent_second;
+        border-radius: 4px;
+        font-size: 1rem;
+        // width: 100%;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.875rem;
+      }
+
+      .cta-button {
+        padding: 0.75rem 1.5rem;
+        background-color: $accent;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        // transition: background 0.3s ease;
+
+        &:hover {
+          background-color: $accent_second;
+        }
+      }
+    }
+
+    .contact-info {
+      margin-top: 1.5rem;
+
+      a {
+        color: $accent;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .socials {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        a {
+          color: $color-text-light;
+          font-size: 1.5rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $accent;
+          }
+        }
+      }
+    }
+  }
+}

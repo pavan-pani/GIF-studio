@@ -1,13 +1,9 @@
-// --- NEW imports for your illustrations -------------------
 import StoryIllust     from '../assets/story-hero.svg';
 import WorkflowIllust  from '../assets/workflow.svg';
 import CultureIllust   from '../assets/culture.svg';
-// -----------------------------------------------------------
 
 const Home = () => (
   <section className="home">
-
-    {/* Existing Hero (kept as-is) */}
     <div className="hero animated-hero">
       <h1 className="headline">Unleash Bold Creativity</h1>
       <p  className="subtext">
@@ -16,9 +12,6 @@ const Home = () => (
       <button className="cta-button">Get Started</button>
     </div>
 
-    {/* ─────────────────────────────────────────────────────── */}
-    {/* 1.  Our Story + Illustration                           */}
-    {/* ─────────────────────────────────────────────────────── */}
     <div className="story split">
       <div className="split__img">
         <img src={StoryIllust} alt="Illustration of GIF Studios’s origin story" />
@@ -40,9 +33,6 @@ const Home = () => (
       </div>
     </div>
 
-    {/* ─────────────────────────────────────────────────────── */}
-    {/* 2.  Signature Workflow + Illustration                  */}
-    {/* ─────────────────────────────────────────────────────── */}
     <div className="workflow split reverse">
     <div className="split__img">
       <img src={WorkflowIllust} alt="GIF Studios Workflow Illustration" />
@@ -86,9 +76,6 @@ const Home = () => (
   </div>
 
 
-    {/* ─────────────────────────────────────────────────────── */}
-    {/* 3.  Culture & Values + Illustration                    */}
-    {/* ─────────────────────────────────────────────────────── */}
     <div className="culture-of-wow split">
   <div className="split__img">
     <img src={CultureIllust} alt="Culture of Wow Illustration" />

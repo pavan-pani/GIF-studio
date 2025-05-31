@@ -1,20 +1,98 @@
-const Contact = () => (
-  <section className="contact">
-    <h1>Contact Us</h1>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <div className="contact-info">
-      <p>Email: hello@GIF Studios.com</p>
-      <p>Phone: +1-234-567-8901</p>
-      <div className="socials">
-        <span>🌐</span><span>📸</span><span>🐦</span>
+import { useForm } from "react-hook-form";
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import ContactIllust from "../assets/contact-us.svg";
+
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    reset();
+  };
+
+  return (
+    <section className="contact">
+      <div className="contact-details">
+        <h2>Let's Connect!</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            {...register("name", { required: true })}
+            placeholder="Your Name"
+          />
+          {errors.name && <span className="error">Name is required</span>}
+
+          <input
+            {...register("email", { required: true })}
+            type="email"
+            placeholder="Your Email"
+          />
+          {errors.email && (
+            <span className="error">Valid email is required</span>
+          )}
+
+          <textarea
+            {...register("message", { required: true })}
+            placeholder="Your Message"
+          />
+          {errors.message && <span className="error">Message is required</span>}
+
+          <button className="cta-button" type="submit">
+            Send
+          </button>
+        </form>
+
+        <div className="contact-info">
+          <p>
+            Email:{" "}
+            <a href="mailto:goudara.pavan.kumar@gmail.com">
+              goudara.pavan.kumar@gmail.com
+            </a>
+          </p>
+          <p>
+            Phone: <a href="tel:+917406036963">+91 74060 36963</a>
+          </p>
+          <div className="socials">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://facebook.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+      <div className="contact-illustration">
+        <img src={ContactIllust} alt="Contact us illustration" />
+      </div>
+    </section>
+  );
+};
 
 export default Contact;
