@@ -8,15 +8,15 @@ Welcome to **GIF Studios** – a bold and visually immersive website tailored fo
 
 | Tech                 | Description                                  |
 |----------------------|----------------------------------------------|
-| [React 19]       | Modern frontend UI library          |
-| [TypeScript] | Typed JavaScript for safer development |
-| [Vite]          | Lightning-fast frontend tooling     |
-| [SCSS]     | Extended CSS with variables, nesting, and theming support |
-| [React Router] | Client-side routing                 |
+| React 19       | Modern frontend UI library          |
+| TypeScript | Typed JavaScript for safer development |
+| Vite         | Lightning-fast frontend tooling     |
+| SCSS     | Extended CSS with variables, nesting, and theming support |
+| React Router | Client-side routing                 |
 | [React Icons](https://react-icons.github.io/react-icons/) | Icon library                        |
 | [StorySet Illustrations](https://storyset.com/) | Free and customizable SVG illustrations |
-| [Git]          | Version control                     |
-| [Vercel]      | Deployment platform for frontend apps |
+| Git         | Version control                     |
+| Vercel     | Deployment platform for frontend apps |
 
 ---
 
