@@ -7,7 +7,7 @@ import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 
 function Navbar() {
-  const { theme, toggleTheme } = useTheme(); // <-- Get theme from context
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const navigateHome = () => navigate("/");
@@ -27,7 +27,7 @@ function Navbar() {
       <div className="mobile-controls">
         <button
           type="button"
-          className="theme-toggle hide-mobile"
+          className="theme-toggle"
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           aria-checked={theme === "dark"}
